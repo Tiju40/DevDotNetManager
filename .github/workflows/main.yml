@@ -1,0 +1,32 @@
+name: PublishApp
+on:
+   workflow_dispatch:
+   push:
+   branches:
+       - Release
+       
+   jobs:
+   publish:
+   run-on: ubuntu-latest
+   
+   steps:
+     - uses: action/checkout@v3
+     
+     - name : Setup .Net
+     - uses: action/checkout@v3
+       with:
+        dotnet-version: '8.0.x'
+        
+    - name: Restore
+      run: dotnet restore ./EmployeMS.sln
+
+    - name : build
+    run: dotnet build ./EmployeMS.sln --configuration Release --no-restore
+
+    - name : Publish
+    run: dotnet publish ./EmployeMS.sln --configuration Release -- no-build
+
+    
+     
+   
+   
