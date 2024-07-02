@@ -19,10 +19,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore
-        run: dotnet restore ./EmployeMS.sln
+        run: dotnet restore ./EmployeMS/EmployeMS.sln
 
       - name: Build
-        run: dotnet build ./EmployeMS.sln --configuration Release --no-restore
+        run: dotnet build ./EmployeMS/EmployeMS.sln --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish ./EmployeMS.sln --configuration Release --no-build
+        run: dotnet publish ./EmployeMS/EmployeMS.sln --configuration Release --no-build
