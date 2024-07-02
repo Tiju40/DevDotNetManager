@@ -1,10 +1,10 @@
 name: PublishApp
 
 on:
-   workflow_dispatch:
-   push:
-   branches:
-       - Release
+  workflow_dispatch:
+  push:
+    branches:
+    - Release
        
    jobs:
    publish:
